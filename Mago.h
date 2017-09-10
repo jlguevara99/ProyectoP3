@@ -18,6 +18,10 @@ class Mago : public Jugador{
 		string getElement();
 		void setElement(string);
 
+		//funciones de personaje
+		int attack();
+		int heal(int);
+		void incrementarHP();
 };
 
 #endif

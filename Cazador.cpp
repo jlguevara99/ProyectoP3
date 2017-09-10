@@ -86,9 +86,38 @@ Cazador::Cazador(){
 
 }
 
+//atacar
+int Cazador::attack(){
+	int numero;
+	srand (time(NULL));
+	numero = rand() % 6+1;
+	int golpe = arma->getPoder();
+	if(numero==1){
+		golpe += golpe*0.5;
+	}else if(numero==2){
+		golpe += golpe*0.10;
+	}else if(numero==3){
+		golpe += golpe*0.15;
+	}
+	return golpe;
+}
+
+//sanar
+int Cazador::heal(int pVida){
+	int nueva = pVida+275;
+	return nueva;	
+}
+
+//incrementar la vida
+void Cazador::incrementarHP(){
+	vida += 140;
+}
+
+
 string Cazador::getAgilidad(){
 	return agilidad;
 }
+
 
 void Cazador::setAgilidad(string agility){
 	agilidad = agility;

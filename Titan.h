@@ -16,6 +16,11 @@ class Titan : public Jugador{
 		Titan();
 		string getFuerza();
 		void setFuerza(string);
+
+		//funciones de personaje
+		int heal(int);
+		int attack();
+		void incrementarHP();
 };
 
 

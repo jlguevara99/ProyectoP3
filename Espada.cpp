@@ -7,3 +7,8 @@ Espada::Espada(string pNombre, string pElemento){
 	poder = 100;
 	elemento = pElemento;
 }
+
+//incrementar poder
+int Espada::incrementarPoder(){
+	poder += 25;
+}

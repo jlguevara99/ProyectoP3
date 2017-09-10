@@ -8,3 +8,7 @@ Baston::Baston(string pNombre,string pElemento){
 	elemento = pElemento;
 }
 
+//incrementar poder
+int Baston::incrementarPoder(){
+	poder += 20;
+}

@@ -4,6 +4,11 @@
 using namespace std;
 
 Titan::Titan(){
+/*	WINDOW* win = newwin(10,10,10,10);
+	refresh();
+	box(win,0,0);
+	mvwprintw(win,1,1,"hallo");
+	wrefresh(win);*/
 	getch();
 	move(20, 50);
 	printw("Creando Su Personaje");
@@ -86,7 +91,32 @@ Titan::Titan(){
 	
 
 }
-	
+
+//atacar
+int Titan::attack(){
+	int numero;
+	srand (time(NULL));
+	numero = rand() % 9+1;
+	int golpe = arma->getPoder();
+	if(numero == 5){
+		golpe += golpe*0.12;
+	}else if(numero == 8){
+		golpe += golpe*0.17;
+	}
+	return golpe;
+}
+
+//sanar
+int Titan::heal(int pVida){
+	int nueva = pVida +225;
+	return nueva;
+}
+
+//incrementar vida
+void Titan::incrementarHP(){
+	vida += 110;
+}
+
 string Titan::getFuerza(){
 	return fuerza;
 }

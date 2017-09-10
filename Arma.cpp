@@ -6,6 +6,10 @@ Arma::Arma(){
 	
 }
 
+int Arma::incrementarPoder(){
+	poder += 0;
+}
+
 Arma::Arma(string pNombre, int mPoder,string pElemento){
 	nombre = pNombre;
 	poder = mPoder;

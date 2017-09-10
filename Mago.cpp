@@ -82,6 +82,33 @@ Mago::Mago(){
 	clear();
 }
 
+//atacar
+int Mago::attack(){
+	int numero;
+	srand(time(NULL));
+	numero = rand() % 7+1;
+	int golpe = arma->getPoder();
+	if(numero == 4){
+		golpe += golpe*0.14; 
+	}else if(numero == 2){
+		golpe += golpe*0.18;
+	}else if(numero == 7){
+		golpe += golpe*0.9;
+	}
+	return golpe;
+}
+
+//sanar
+int Mago::heal(int pVida){
+	int nueva = pVida+250;
+	return nueva;
+}
+
+//incrementar vida
+void Mago::incrementarHP(){
+	vida += 125;
+}
+
 string Mago::getElement(){
 	return element;
 }

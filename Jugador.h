@@ -1,6 +1,8 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
+#include <stdlib.h>
+#include <time.h>
 #include <string>
 #include <iostream>
 #include "Arma.h"
@@ -28,6 +30,12 @@ class Jugador{
 		void setNombre(string);
 		void setVida(int);
 		void setArma(Arma*);
+
+		//funciones de jugador
+		virtual int attack();
+		virtual int heal(int);	
+		virtual void incrementarHP();
+		
 };
 
 

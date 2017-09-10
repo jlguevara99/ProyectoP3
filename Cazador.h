@@ -16,6 +16,11 @@ class Cazador : public Jugador{
 		Cazador();
 		string getAgilidad();
 		void setAgilidad(string);
+
+		//funcion atacar
+		int attack();
+		int heal(int);
+		void incrementarHP();
 };
 
 #endif

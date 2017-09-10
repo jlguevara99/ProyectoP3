@@ -10,17 +10,21 @@
 #include "Espada.h"
 #include "Baston.h"
 #include <string>
+#include <ncurses.h>
+#include <stdlib.h> 
+
 using namespace std;
 
 class Juego{
 	private:
 		int numeroJugadores;
 		Jugador** jugadores;
-		
+		int tablero[100];
 	public:
+		Juego();
 		void init();
 		int play();
-
+		
 };
 
 #endif

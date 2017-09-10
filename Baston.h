@@ -7,6 +7,9 @@ using namespace std;
 class Baston : public Arma{
 	public:
 		Baston(string,string);
+
+		//funciones de arma
+		int incrementarPoder();
 };
 
 #endif

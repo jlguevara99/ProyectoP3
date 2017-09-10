@@ -8,3 +8,9 @@ Chancla::Chancla(string pNombre, string pElemento){
 	poder = 180;
 	elemento = pElemento;
 }
+
+//incrementar poder
+
+int Chancla::incrementarPoder(){
+	poder += 15;
+}

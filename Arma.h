@@ -24,5 +24,7 @@ class Arma{
 	void setElemento(string);
 
 
+	virtual int incrementarPoder();
+
 };
 #endif

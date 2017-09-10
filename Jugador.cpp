@@ -8,6 +8,18 @@ Jugador::Jugador(){
 
 }
 
+void Jugador::incrementarHP(){
+	vida = 0;
+}
+
+int Jugador::attack(){
+	return 2;
+}
+
+int Jugador::heal(int pvida){
+	return 0;
+}
+
 Jugador::Jugador(string pNombre,Arma* pArma, int pVida){
 	nombre = pNombre;
 	arma = pArma;

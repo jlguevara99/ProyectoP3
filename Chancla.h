@@ -10,6 +10,9 @@ using namespace std;
 class Chancla : public Arma{
 	public:
 		Chancla(string,string);
+
+		//funciones de arma
+		int incrementarPoder();
 };
 
 #endif
