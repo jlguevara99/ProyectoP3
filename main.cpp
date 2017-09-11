@@ -7,8 +7,12 @@
 #include "Espada.h"
 #include "Baston.h"
 #include "Juego.h"
-#include <ncurses.h>
+#include "Minijuego.h"
+#include "Adivina.h"
+#include "Busca.h"
+#include "TicTac.h"
 
+#include <ncurses.h>
 #include <typeinfo>
 #include <string>
 #include <iostream>
@@ -38,9 +42,13 @@ int main(){
 		}*/
 	//	printw("%d",m->attack());
 
-	Juego* juego = new Juego();
-	juego->init();
-	
+	//Juego* juego = new Juego();
+	//juego->init();
+		Minijuego* juego = new Busca();
+		clear();
+		int a = juego->run();
+		move(2,2);
+		printw("%d",a);
 		getch();
 		move(1,1);
 		printw("si");

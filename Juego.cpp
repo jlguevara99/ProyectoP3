@@ -48,7 +48,8 @@ void Juego::init(){
 					break;
 				case KEY_DOWN:
 					eleccion++;
-					if(eleccion == 3){
+
+	if(eleccion == 3){
 						eleccion = 2;
 					}
 					break;
@@ -68,7 +69,7 @@ void Juego::init(){
 			jugadores[j] = new Titan();
 		}
 
-
+		delete menu;
 	}//fin del for principal
 	
 }
