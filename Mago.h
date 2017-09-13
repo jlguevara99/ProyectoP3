@@ -15,6 +15,7 @@ class Mago : public Jugador{
 		string element;				
 	public:
 		Mago();
+		Mago(string,Arma*);
 		string getElement();
 		void setElement(string);
 

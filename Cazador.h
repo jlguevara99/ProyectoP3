@@ -14,6 +14,7 @@ class Cazador : public Jugador{
 		string agilidad;
 	public:
 		Cazador();
+		Cazador(string,Arma*);
 		string getAgilidad();
 		void setAgilidad(string);
 

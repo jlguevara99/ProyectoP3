@@ -10,6 +10,7 @@ class Baston : public Arma{
 
 		//funciones de arma
 		int incrementarPoder();
+		string getElemento();
 };
 
 #endif

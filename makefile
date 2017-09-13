@@ -1,5 +1,5 @@
-main:	main.o Jugador.o Arma.o Cazador.o Titan.o Mago.o Espada.o Baston.o Chancla.o Juego.o Minijuego.o Adivina.o TicTac.o Busca.o
-	g++ main.o Jugador.o Arma.o Cazador.o Titan.o Mago.o Espada.o Baston.o Chancla.o Juego.o Minijuego.o Adivina.o TicTac.o Busca.o -lncurses -o main
+main:	main.o Jugador.o Arma.o Cazador.o Titan.o Mago.o Espada.o Baston.o Chancla.o Juego.o Minijuego.o Adivina.o TicTac.o Busca.o Ahorcado.o Batalla.o
+	g++ main.o Jugador.o Arma.o Cazador.o Titan.o Mago.o Espada.o Baston.o Chancla.o Juego.o Minijuego.o Adivina.o TicTac.o Busca.o Ahorcado.o Batalla.o  -lncurses -o main
 
 main.o:	main.cpp Arma.h Cazador.h Titan.h Jugador.h Mago.h
 	g++ -c main.cpp
@@ -42,5 +42,11 @@ TicTac.o:	TicTac.h TicTac.cpp
 
 Busca.o:	Busca.h Busca.cpp
 	g++ -c Busca.cpp
+
+Ahorcado.o:	Ahorcado.h Ahorcado.cpp
+	g++ -c Ahorcado.cpp
+
+Batalla.o:	Batalla.h Batalla.cpp
+	g++ -c Batalla.cpp
 clean:
 	rm -f *.o main

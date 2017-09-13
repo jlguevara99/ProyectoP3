@@ -82,6 +82,13 @@ Mago::Mago(){
 	clear();
 }
 
+Mago::Mago(string pNombre, Arma* pArma){
+	nombre = pNombre;
+	arma = pArma;
+	element = ".";
+	vida = 1250;
+}
+
 //atacar
 int Mago::attack(){
 	int numero;

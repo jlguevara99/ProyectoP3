@@ -15,6 +15,11 @@ int TicTac::getCodigo(){
 
 int TicTac::run(){
 	clear();
+
+	init_pair(1, COLOR_WHITE,COLOR_BLUE);
+	init_pair(2, COLOR_WHITE,COLOR_RED);
+
+
 	char** tablero;
 	int turnos = 1;
 	//provisionar matriz
@@ -35,6 +40,7 @@ int TicTac::run(){
 
 	do {
 		if(turnos == 1){
+			wbkgd(ventana,COLOR_PAIR(1));
 			refresh();
 			move(19,50);
 			printw("Jugador 1");
@@ -87,6 +93,7 @@ int TicTac::run(){
 			clear();
 			//turno del jugador 2
 		}else if(turnos == 2){
+			wbkgd(ventana,COLOR_PAIR(2));
 			refresh();
 			move(19,50);
 			printw("Jugador 2");
@@ -143,39 +150,31 @@ int TicTac::run(){
 		//verticales
 		if(tablero[0][0] == 'X' && tablero[1][0] == 'X' && tablero[2][0] == 'X'){
 			gana1 = false;
-			continue;
 		}
 		if(tablero[0][1] == 'X' && tablero[1][1] == 'X' && tablero[1][2] == 'X'){
 			gana1 = false;
-			continue;
 		}
 		if(tablero[0][2] == 'X' && tablero[1][2] == 'X' && tablero[2][2] == 'X'){
 			gana1 = false;
-			continue;
 		}
 
 		//horizontales
 		if(tablero[0][0] == 'X' && tablero[0][1] == 'X' && tablero[0][2] == 'X'){
 			gana1 = false;
-			continue;
 		}
 		if(tablero[1][0] == 'X' && tablero[1][1] == 'X' && tablero[1][2] == 'X'){
 			gana1 = false;
-			continue;
 		}
 		if(tablero[2][0] == 'X' && tablero[2][1] == 'X' && tablero[2][2] == 'X'){
 			gana1 = false;
-			continue;
 		}
 
 		//diagonales
 		if(tablero[0][0] == 'X' && tablero[1][1] == 'X' && tablero[2][2] == 'X'){
 			gana1 = false;
-			continue;
 		}
 		if(tablero[0][2] == 'X' && tablero[1][1] == 'X' && tablero[2][0] == 'X'){
 			gana1 = false;
-			continue;
 		}
 
 		//validaciones para ganar(jugador 2)
@@ -183,39 +182,31 @@ int TicTac::run(){
 		//verticales
 		if(tablero[0][0] == 'O' && tablero[1][0] == 'O' && tablero[2][0] == 'O'){
 			gana2 = false;
-			continue;
 		}
-		if(tablero[0][1] == 'O' && tablero[1][1] == 'O' && tablero[1][2] == 'O'){
+		if(tablero[0][1] == 'O' && tablero[1][1] == 'O' && tablero[2][1] == 'O'){
 			gana2 = false;
-			continue;
 		}
 		if(tablero[0][2] == 'O' && tablero[1][2] == 'O' && tablero[2][2] == 'O'){
 			gana2 = false;
-			continue;
 		}
 
 		//horizontales
 		if(tablero[0][0] == 'O' && tablero[0][1] == 'O' && tablero[0][2] == 'O'){
 			gana2 = false;
-			continue;
 		}
 		if(tablero[1][0] == 'O' && tablero[1][1] == 'O' && tablero[1][2] == 'O'){
 			gana2 = false;
-			continue;
 		}
 		if(tablero[2][0] == 'O' && tablero[2][1] == 'O' && tablero[2][2] == 'O'){
 			gana2 = false;
-			continue;
 		}
 
 		//diagonales
 		if(tablero[0][0] == 'O' && tablero[1][1] == 'O' && tablero[2][2] == 'O'){
 			gana2 = false;
-			continue;
 		}
 		if(tablero[0][2] == 'O' && tablero[1][1] == 'O' && tablero[2][0] == 'O'){
 			gana2 = false;
-			continue;
 		}
 
 		//verificar empate
@@ -233,8 +224,8 @@ int TicTac::run(){
 		}
 	} while (gana1 && gana2 && empate);
 
-	//liberar la ventana
-//	delete ventana;
+	
+	// wdelete(ventana);
 
 	//liberar la memoria de la matriz
 	for(int i = 0; i < 3; i++) {

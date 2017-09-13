@@ -16,7 +16,8 @@ int Adivina::getCodigo(){
 //minijuego de adivinar un numero random
 int Adivina::run(){
 	clear();
-	
+	init_pair(1,COLOR_WHITE,COLOR_BLUE);
+	init_pair(2,COLOR_WHITE,COLOR_RED);
 	
 	bool gana1 = true, gana2 = true;
 	int cont = 9;
@@ -32,6 +33,7 @@ int Adivina::run(){
 
 		
 			//WINDOW* ventana = newwin(20,40,20,50);
+			wbkgd(ventana,COLOR_PAIR(1));
 			refresh();
 			box(ventana,0,0);
 			wrefresh(ventana);
@@ -55,6 +57,7 @@ int Adivina::run(){
 			clear();
 		}else if(turnos == 2){
 			//WINDOW* ventana2 = newwin(20,40,20,50);
+			wbkgd(ventana2,COLOR_PAIR(2));
 			refresh();
 			box(ventana2,0,0);
 			wrefresh(ventana2);

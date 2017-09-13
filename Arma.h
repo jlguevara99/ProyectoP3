@@ -17,7 +17,7 @@ class Arma{
 	
 	string getNombre();
 	int getPoder();
-	string getElemento();
+	virtual string getElemento();
 
 	void setNombre(string);
 	void setPoder(int);

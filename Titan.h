@@ -14,6 +14,7 @@ class Titan : public Jugador{
 		string fuerza;
 	public:
 		Titan();
+		Titan(string, Arma*);
 		string getFuerza();
 		void setFuerza(string);
 

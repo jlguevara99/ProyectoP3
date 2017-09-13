@@ -12,3 +12,7 @@ Baston::Baston(string pNombre,string pElemento){
 int Baston::incrementarPoder(){
 	poder += 20;
 }
+
+string Baston::getElemento(){
+	return elemento;
+}

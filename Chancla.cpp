@@ -14,3 +14,7 @@ Chancla::Chancla(string pNombre, string pElemento){
 int Chancla::incrementarPoder(){
 	poder += 15;
 }
+
+string Chancla::getElemento(){
+	return elemento;
+}

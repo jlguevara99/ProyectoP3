@@ -20,6 +20,8 @@ class Juego{
 		int numeroJugadores;
 		Jugador** jugadores;
 		int tablero[100];
+		int posicion1;
+		int posicion2;
 	public:
 		Juego();
 		void init();

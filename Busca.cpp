@@ -15,22 +15,26 @@ int Busca::getCodigo(){
 
 int Busca::run(){
 	clear();
+	
 	char** referencia;
 	char** tablero;
-
+	
+	init_pair(1,COLOR_WHITE,COLOR_BLUE);
+	init_pair(2,COLOR_WHITE,COLOR_RED);
 	referencia = new char*[4];
 	tablero = new char*[4];
 	for(int i = 0; i < 4; i++) {
 		referencia[i] = new char[4];
 		tablero[i] = new char[4];
 	}
-
+	srand(time(NULL));
+	int numero;
 	for(int i = 0; i < 4; i++) {
 		for(int j = 0;j < 4; j++) {
-			int numero;
-			srand(time(NULL));
+			
+			
 			numero = rand() % 3+1;
-			if(numero==1 || numero ==2){
+			if(numero==1){
 				referencia[i][j] = 'x';
 			}else{
 				referencia[i][j] = '.';
@@ -39,14 +43,28 @@ int Busca::run(){
 		}
 	}
 
-	WINDOW* ventana = newwin(20,35,20,50);
+	WINDOW* ventana = newwin(20,40,20,50);
 
-	bool gana1 = true, gana2 = true;
+	bool gana1 = true, gana2 = true, empate = true;
 
 	int turnos = 1;
 	do {
 		clear();
+		/*int aaa = 7;
+		int bbb = 2; 
+		for(int i = 0; i < 4; i++) {
+			for(int j = 0; j <4; j++) {
+				move(bbb,aaa);
+				printw("[%c]",referencia[i][j]);
+				aaa+=7;
+			}
+			aaa=7;
+			bbb+=2;
+		}*/
+
+		
 		if(turnos==1){
+			wbkgd(ventana,COLOR_PAIR(1));
 			refresh();
 			move(19,50);
 			printw("Jugador 1");
@@ -98,6 +116,7 @@ int Busca::run(){
 			turnos = 2;
 			clear();
 		}else if(turnos==2){
+			wbkgd(ventana,COLOR_PAIR(2));
 			refresh();
 			move(19,50);
 			printw("Jugador 2");
@@ -149,11 +168,34 @@ int Busca::run(){
 			turnos = 1;
 			clear();
 		}
-	} while (gana1 && gana2);
+		int conteo = 0;
+		for(int i = 0; i < 4; i++) {
+			for(int j = 0; j < 4; j++) {
+				if(tablero[i][j] == '.'){
+					conteo++;
+				}
+			}
+		}
+		if(conteo==0){
+			empate = false;
+		}
+	} while (gana1 && gana2 && empate);
+		
+	for(int i = 0; i < 4; i++) {
+		delete[] referencia[i];
+		delete[] tablero[i];
+		referencia[i] = NULL;
+		tablero[i] = NULL;
+	}
+	delete[] referencia;
+	delete[] tablero;
+
 
 	if(gana1 == false){
 		return 1;
 	}else if(gana2 == false){
 		return 2;
+	}else if(empate == false){
+		return 0;
 	}
 }

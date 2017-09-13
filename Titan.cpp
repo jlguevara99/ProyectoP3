@@ -67,15 +67,15 @@ Titan::Titan(){
 	if(opcion=='a'){
 		Arma* nueva = new Espada(arm,elem);
 		arma = nueva;
-		delete nueva;
+		
 	}else if(opcion=='b'){
 		Arma* nueva = new Baston(arm,elem);
 		arma = nueva;
-		delete nueva;
+		
 	}else if(opcion=='c'){
 		Arma* nueva = new Chancla(arm,elem);
 		arma = nueva;
-		delete nueva;
+	
 	}
 	clear();
 	move(20,50);
@@ -92,16 +92,25 @@ Titan::Titan(){
 
 }
 
+Titan::Titan(string pNombre, Arma* pArma){
+	nombre = pNombre;
+	vida = 1350;
+	fuerza = ".";
+	arma = pArma;
+}
+
 //atacar
 int Titan::attack(){
-	int numero;
-	srand (time(NULL));
-	numero = rand() % 9+1;
+
+	srand(time(NULL));
+	int numero = rand() % 8+1;
 	int golpe = arma->getPoder();
-	if(numero == 5){
-		golpe += golpe*0.12;
-	}else if(numero == 8){
-		golpe += golpe*0.17;
+	if(numero == 6){
+		golpe += golpe*0.13; 
+	}else if(numero == 4){
+		golpe += golpe*0.16;
+	}else if(numero == 1){
+		golpe += golpe*0.8;
 	}
 	return golpe;
 }
