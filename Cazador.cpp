@@ -93,6 +93,10 @@ Cazador::Cazador(string pNombre, Arma* pArma){
 	agilidad = ".";
 }
 
+int Cazador::getVida(){
+	return vida;
+}
+
 //atacar
 int Cazador::attack(){
 	int numero;

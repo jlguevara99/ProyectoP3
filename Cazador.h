@@ -22,6 +22,7 @@ class Cazador : public Jugador{
 		int attack();
 		int heal(int);
 		void incrementarHP();
+		int getVida();
 };
 
 #endif

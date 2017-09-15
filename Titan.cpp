@@ -99,6 +99,10 @@ Titan::Titan(string pNombre, Arma* pArma){
 	arma = pArma;
 }
 
+
+int Titan::getVida(){
+	return vida;
+}
 //atacar
 int Titan::attack(){
 

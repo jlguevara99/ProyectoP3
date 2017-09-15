@@ -11,6 +11,8 @@ class Espada : public Arma{
 		//funciones de arma
 		int incrementarPoder();
 		string getElemento();
+		int getPoder();
+		string getNombre();
 };
 
 #endif

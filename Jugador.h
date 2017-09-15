@@ -23,7 +23,10 @@ class Jugador{
 		
 		//getters
 		string getNombre();
-		int getVida();
+
+		//hacer puro
+		virtual int getVida()=0;
+		//
 		Arma* getArma();
 
 		//setters

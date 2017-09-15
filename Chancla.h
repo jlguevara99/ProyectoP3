@@ -12,8 +12,10 @@ class Chancla : public Arma{
 		Chancla(string,string);
 
 		//funciones de arma
+		int getPoder();
 		int incrementarPoder();
 		string getElemento();
+		string getNombre();
 };
 
 #endif

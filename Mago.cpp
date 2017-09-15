@@ -89,6 +89,10 @@ Mago::Mago(string pNombre, Arma* pArma){
 	vida = 1250;
 }
 
+int Mago::getVida(){
+	return vida;
+}
+
 //atacar
 int Mago::attack(){
 	int numero;

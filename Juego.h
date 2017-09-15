@@ -9,23 +9,40 @@
 #include "Chancla.h"
 #include "Espada.h"
 #include "Baston.h"
+#include "Minijuego.h"
+#include "Adivina.h"
+#include "Busca.h"
+#include "TicTac.h"
+#include "Ahorcado.h"
+#include "Batalla.h"
 #include <string>
 #include <ncurses.h>
 #include <stdlib.h> 
-
+#include <fstream>
+#include <iostream>
+#include <typeinfo>
+#include <time.h>
 using namespace std;
 
 class Juego{
-	private:
+	public:
 		int numeroJugadores;
 		Jugador** jugadores;
-		int tablero[100];
+		
 		int posicion1;
 		int posicion2;
-	public:
-		Juego();
-		void init();
+	//public:
+		Juego(int);
+		Juego(int,int,Jugador*,Jugador*);
+		void init(int);
+		
 		int play();
+		int RUN();
+
+
+		friend ostream& operator<<(ostream&,const Juego&);
+
+		friend istream& operator>>(istream&, Juego&);
 		
 };
 

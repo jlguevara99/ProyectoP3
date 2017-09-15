@@ -18,7 +18,7 @@ class Mago : public Jugador{
 		Mago(string,Arma*);
 		string getElement();
 		void setElement(string);
-
+		int getVida();
 		//funciones de personaje
 		int attack();
 		int heal(int);

@@ -15,15 +15,15 @@ class Arma{
 	Arma();
 	Arma(string,int,string);
 	
-	string getNombre();
-	int getPoder();
+	virtual string getNombre();
+	virtual int getPoder();
 	virtual string getElemento();
 
 	void setNombre(string);
 	void setPoder(int);
 	void setElemento(string);
 
-
+	//funcion de arma
 	virtual int incrementarPoder();
 
 };

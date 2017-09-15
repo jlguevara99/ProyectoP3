@@ -9,8 +9,10 @@ class Baston : public Arma{
 		Baston(string,string);
 
 		//funciones de arma
+		int getPoder();
 		int incrementarPoder();
 		string getElemento();
+		string getNombre();
 };
 
 #endif

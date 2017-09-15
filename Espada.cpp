@@ -8,9 +8,17 @@ Espada::Espada(string pNombre, string pElemento){
 	elemento = pElemento;
 }
 
+string Espada::getNombre(){
+	return nombre;
+}
+
 //incrementar poder
 int Espada::incrementarPoder(){
 	poder += 25;
+}
+
+int Espada::getPoder(){
+	return poder;
 }
 
 string Espada::getElemento(){
