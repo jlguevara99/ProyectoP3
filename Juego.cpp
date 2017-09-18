@@ -18,22 +18,18 @@ Juego::Juego(int p1, int p2,Jugador* jj, Jugador* jj2){
 
 //menu para correr el juego
 int Juego::RUN(){
-	
-
 	int opcion;
 	Juego* jj = new Juego(2);
 	do {
-
-		
 		WINDOW* menu = newwin(20,20,10,50);
 		refresh();
 		box(menu,0,0);
 		wrefresh(menu);
 		mvwprintw(menu,1,6,"Density");
-		mvwprintw(menu,2,5,"1. New Game");
-		mvwprintw(menu,3,5,"2. Continue");
-		mvwprintw(menu,4,5,"3. Exit");
-		mvwprintw(menu,5,5,"");
+		mvwprintw(menu,2,3,"1. New Game");
+		mvwprintw(menu,3,3,"2. Continue");
+		mvwprintw(menu,4,3,"3. Exit");
+		mvwprintw(menu,5,3,"");
 		char opi[2];
 		wgetstr(menu,opi);
 		opcion = atoi(opi);
@@ -44,7 +40,14 @@ int Juego::RUN(){
 		}else if(opcion == 2){
 			jj->init(2);
 		}else if(opcion == 3){
-	
+			clear();
+			move(5,30);
+			printw(" ___    ___   _   _    ___    ___    ___    _   _");
+			move(6,30);
+			printw("|   )   |__   | \\ |   |___     |      |     |___|");
+			move(7,30);
+			printw("|___)   |__   |  \\|    ___|   _|_     |       |");
+			getch();
 		}
 	
 		}while(opcion != 3);
@@ -142,7 +145,7 @@ int Juego::play(){
 	clear();
 	char* tablero;
 	tablero = new char[100];
-	for(int i = 0; i < 100; i++) {
+	for(int i = 0; i < 100; i++) {//llenar el tablero
 		tablero[i] = ' ';
 	}
 	init_pair(1,COLOR_WHITE,COLOR_BLUE);
@@ -158,7 +161,7 @@ int Juego::play(){
 		clear();
 		if(turno == 0){
 			wbkgd(gameplay,COLOR_PAIR(1));
-		}else{
+		}else{//cambiarle el color al tablero, dependiendo del jugador
 			wbkgd(gameplay,COLOR_PAIR(2));
 		}
 		refresh();
@@ -217,7 +220,7 @@ int Juego::play(){
 			int minigame =rand() & 10+1;
 			int ganador;
 
-			
+			//elige un minijuego aleatorio
 			if(minigame == 1){
 				clear();
 				move(20,20);
@@ -236,7 +239,7 @@ int Juego::play(){
 				Minijuego* mini = new TicTac();
 				ganador = mini->run();
 				delete mini;
-			}else if(minigame == 5){
+			}else if(minigame == 3){
 				clear();
 				move(20,20);
 				printw("Minigame: Busca");
@@ -245,7 +248,7 @@ int Juego::play(){
 				Minijuego* mini = new Busca();
 				ganador = mini->run();
 				delete mini;
-			}else if(minigame == 7){
+			}else if(minigame == 4){
 				clear();
 				move(20,20);
 				printw("Minigame: Ahorcado");
@@ -326,11 +329,12 @@ int Juego::play(){
 	}else{
 		return 0;
 	}
+	//retornar jugador
 }
 
 
 
-//salida
+//salida (escribir a un archivo de texto)
 ostream& operator << (ostream& out,const Juego& game){
 	Jugador* j1 = game.jugadores[0];
 	Jugador* j2 = game.jugadores[1];
@@ -360,16 +364,16 @@ ostream& operator << (ostream& out,const Juego& game){
 	return out;
 }
 
-//entrada
+//entrada (recuperar datos de un archivo de texto)
 istream& operator >> (istream& in, Juego& game){
 	string buffer;
-
+	in>>buffer;
 	
-	printw("%s",buffer.c_str());
+	//printw("%s",buffer.c_str());
 	int contador = 0;
 	string palabra = "";
 	string nom1,nom2,tipo1,tipo2;
-	
+		
 	for(int i = 0; i < buffer.size(); i++) {
 		if(buffer[i] == ',' || i+1 == buffer.size()){
 			contador++;
@@ -377,6 +381,9 @@ istream& operator >> (istream& in, Juego& game){
 			if(contador==1){
 				int numero = atoi(palabra.c_str());
 				game.posicion1 = numero;
+				/*move(2,2);
+				printw("aqui %d",game.posicion1);
+				getch();*/
 			}else if(contador==2){
 				int num = atoi(palabra.c_str());
 				game.posicion2 = num;
@@ -396,21 +403,6 @@ istream& operator >> (istream& in, Juego& game){
 	}
 	getch();
 	
-	/*Arma* a=new Baston(" "," ");
-	if(tipo1 == "c"){
-		game.jugadores[0] = new Cazador(nom1,a);
-	}else if(tipo1 == "m"){
-		game.jugadores[0] = new Mago(nom1,a);
-	}else if(tipo1 == "t"){
-		game.jugadores[0] = new Titan(nom1,a);
-	}
-
-	if(tipo2 == "c"){
-		game.jugadores[1] = new Cazador(nom2,a);
-	}else if(tipo2 == "m"){
-		game.jugadores[1] = new Mago(nom2,a);
-	}else if(tipo2 == "t"){
-		game.jugadores[1] = new Titan(nom2,a); 
-	}*/
 	
+	return in;	
 }
