@@ -189,8 +189,10 @@ int Busca::run(){
 	}
 	delete[] referencia;
 	delete[] tablero;
+	//liberar memoria 
 
 
+	//retornar ganador
 	if(gana1 == false){
 		return 1;
 	}else if(gana2 == false){

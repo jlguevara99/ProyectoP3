@@ -15,6 +15,7 @@ class Arma{
 	Arma();
 	Arma(string,int,string);
 	
+	//funciones de armas
 	virtual string getNombre();
 	virtual int getPoder();
 	virtual string getElemento();
@@ -23,7 +24,7 @@ class Arma{
 	void setPoder(int);
 	void setElemento(string);
 
-	//funcion de arma
+	//funcion de arma.. incrementa el poder del arma
 	virtual int incrementarPoder();
 
 };

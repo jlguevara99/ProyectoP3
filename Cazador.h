@@ -20,8 +20,11 @@ class Cazador : public Jugador{
 
 		//funcion atacar
 		int attack();
+		//recuperar salud en batalla
 		int heal(int);
+		//incrementar la salud total del personaje
 		void incrementarHP();
+
 		int getVida();
 };
 

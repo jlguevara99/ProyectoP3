@@ -41,12 +41,38 @@ int Juego::RUN(){
 			jj->init(2);
 		}else if(opcion == 3){
 			clear();
-			move(5,30);
+			move(5,40);
 			printw(" ___    ___   _   _    ___    ___    ___    _   _");
-			move(6,30);
+			move(6,40);
 			printw("|   )   |__   | \\ |   |___     |      |     |___|");
-			move(7,30);
+			move(7,40);
 			printw("|___)   |__   |  \\|    ___|   _|_     |       |");
+
+
+			move(10,63);
+			printw(" ^ ");
+			move(11,63);
+			printw("| |");
+			move(12,63);
+			printw("| |");
+			move(13,63);
+			printw("| |");
+			move(14,63);
+			printw("| |");
+			move(15,63);
+			printw("| |");
+			move(16,63);
+			printw("| |");
+			move(17,62);
+			printw("_|_|_");
+			move(18,62);
+			printw("\\   /");
+			move(19,63);
+			printw("|_|");
+			move(20,63);
+			printw("|_|");
+
+
 			getch();
 		}
 	

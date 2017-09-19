@@ -11,7 +11,7 @@ class Minijuego{
 	public:
 		virtual string getNombre() =0;
 		virtual int getCodigo() =0;
-		virtual int run() =0;
+		virtual int run() =0;//La funcion de jugar cada minijuego
 };
 
 #endif

@@ -12,7 +12,7 @@ string Ahorcado::getNombre(){
 int Ahorcado::getCodigo(){
 	return tipo;
 }
-
+//desarrollo del juego
 int Ahorcado::run(){
 	clear();
 	init_pair(1,COLOR_WHITE, COLOR_BLUE);
@@ -52,7 +52,7 @@ int Ahorcado::run(){
 			continue;
 		}
 		bool NOesta = true;
-		for(int i = 0; i < palabra1.size(); i++) {
+		for(int i = 0; i < palabra1.size(); i++) {//verificar coincidencia
 			if(palabra1.at(i)==l.at(0)){
 				referencia.replace(i,1,l);
 				NOesta = false;
@@ -71,7 +71,9 @@ int Ahorcado::run(){
 			gana1 = false;
 		}
 
-	} while (contador<6 && gana1);
+	} while (contador<6 && gana1);//tienen 6 oportunidades
+
+
 	string referencia2;
 	srand(time(NULL));
 	int numero2 = rand() % 10+1;
@@ -84,6 +86,8 @@ int Ahorcado::run(){
 	clear();
 	getch();
 	int contador2 = 0;
+
+	//turno 2
 	do {
 		clear();
 		wrefresh(ventana);
@@ -126,6 +130,8 @@ int Ahorcado::run(){
 
 	} while (contador2<6 && gana2);
 
+
+	//retorna ganadorta
 	if(gana1 == false && gana2 == false){
 		return 0;
 	}else if(gana1 == true && gana2 == true){

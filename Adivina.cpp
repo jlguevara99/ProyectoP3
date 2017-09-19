@@ -78,7 +78,7 @@ int Adivina::run(){
 		
 
 		if(cont>3){
-			cont--;
+			cont--;//reduce el margen para adivinar 
 		}
 	} while (gana1 && gana2);
 		if(gana1 == false){

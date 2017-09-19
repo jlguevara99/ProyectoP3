@@ -51,11 +51,11 @@ int Batalla::run(){
 			wgetstr(ventana,opci);
 			int opcion;
 			opcion = atoi(opci);
-			//cambiar por enteros
+			
 			if(opcion == 1){
-				vida2 -= jugador1->attack();
+				vida2 -= jugador1->attack();//resta el ataque de la vida del otro
 			}else if(opcion == 2){
-				vida1 = jugador1->heal(vida1);
+				vida1 = jugador1->heal(vida1);//recupera vida
 			}
 
 			if(vida2 <= 0){
@@ -85,9 +85,9 @@ int Batalla::run(){
 			wgetstr(ventana,opci2);
 			int opcion2 = atoi(opci2);
 			if(opcion2 == 1){
-				vida1 -= jugador2->attack();
+				vida1 -= jugador2->attack();//resta el ataque de la vida del otro
 			}else if(opcion2 == 2){
-				vida2 = jugador1->heal(vida2);
+				vida2 = jugador1->heal(vida2);//recupera vida
 			}
 			if(vida1 <= 0){
 				gana2 = false;
@@ -106,5 +106,5 @@ int Batalla::run(){
 		return 2;
 	}else{
 		return 0;
-	}
+	}//retornar ganador
 }
