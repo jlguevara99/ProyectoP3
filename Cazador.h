@@ -26,6 +26,8 @@ class Cazador : public Jugador{
 		void incrementarHP();
 
 		int getVida();
+
+		int super();
 };
 
 #endif

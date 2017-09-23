@@ -1,5 +1,10 @@
 #include "Mago.h"
 #include "Arma.h"
+
+int Mago::super(){
+	return 425;
+}
+
 Mago::Mago(){
 	move(20,50);
 	printw("Creando su Personaje: ");
@@ -111,13 +116,13 @@ int Mago::attack(){
 
 //sanar
 int Mago::heal(int pVida){
-	int nueva = pVida+250;
+	int nueva = pVida+35;
 	return nueva;
 }
 
 //incrementar vida
 void Mago::incrementarHP(){
-	vida += 35;
+	vida += 150;
 }
 
 string Mago::getElement(){

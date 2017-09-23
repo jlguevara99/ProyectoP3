@@ -232,6 +232,10 @@ int Juego::play(){
 		
 		if(opcion == 1){
 			int lanzar = rand() % 6+1;
+			mvwprintw(gameplay,19,3,"Ha caido: %d",lanzar);
+			wrefresh(gameplay);
+			refresh();
+			getch();
 			if(turno == 0){
 				if(posicion1<=99){				
 					tablero[posicion1] = ' ';
@@ -332,7 +336,7 @@ int Juego::play(){
 			}
 			wrefresh(gameplay);
 			refresh();
-			getch();
+			//getch();
 
 		}else if(opcion == 2){
 			salir = false;

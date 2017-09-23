@@ -23,6 +23,8 @@ class Mago : public Jugador{
 		int attack();
 		int heal(int);
 		void incrementarHP();
+
+		int super();
 };
 
 #endif

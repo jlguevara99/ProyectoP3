@@ -38,7 +38,8 @@ class Jugador{
 		virtual int attack();
 		virtual int heal(int);	
 		virtual void incrementarHP();
-		
+	
+		virtual int super() = 0;
 };
 
 

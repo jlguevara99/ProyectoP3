@@ -31,6 +31,7 @@ int Batalla::run(){
 	bool gana1 = true, gana2 = true;
 	move(10,10);
 	getch();
+	int super1 = 0, super2 = 0;
 	do {
 		if(turnos == 1){
 			clear();
@@ -46,6 +47,7 @@ int Batalla::run(){
 			mvwprintw(ventana,7,2,"Ingrese la opcion, %s: ",nombre1.c_str());
 			mvwprintw(ventana,8,2,"1. Atacar");
 			mvwprintw(ventana,9,2,"2. Regenerar Salud ");
+			mvwprintw(ventana,10,2,"3. Super ");
 			wrefresh(ventana);
 			char opci[2];
 			wgetstr(ventana,opci);
@@ -56,6 +58,15 @@ int Batalla::run(){
 				vida2 -= jugador1->attack();//resta el ataque de la vida del otro
 			}else if(opcion == 2){
 				vida1 = jugador1->heal(vida1);//recupera vida
+			}else if(opcion == 3){
+				if(super1 == 0){
+					vida2 -= jugador1->super();
+					super1++;
+				}else{
+					mvwprintw(ventana,12,2,"J1, Ya ha usado el super");
+					wrefresh(ventana);
+					refresh();
+				}
 			}
 
 			if(vida2 <= 0){
@@ -80,6 +91,7 @@ int Batalla::run(){
 			mvwprintw(ventana,7,2,"Ingrese la opcion, %s: ",nombre2.c_str());
 			mvwprintw(ventana,8,2,"1. Atacar");
 			mvwprintw(ventana,9,2,"2. Regenerar Salud ");
+			mvwprintw(ventana,10,2,"3. Super");
 			wrefresh(ventana);
 			char opci2[2];
 			wgetstr(ventana,opci2);
@@ -88,6 +100,15 @@ int Batalla::run(){
 				vida1 -= jugador2->attack();//resta el ataque de la vida del otro
 			}else if(opcion2 == 2){
 				vida2 = jugador1->heal(vida2);//recupera vida
+			}else if(opcion2 == 3){
+				if(super2 == 0){
+					vida1 -= jugador2->super();
+					super2++;
+				}else{
+					mvwprintw(ventana,13,2,"J2, Ya ha usado el super");
+					wrefresh(ventana);
+					refresh();
+				}
 			}
 			if(vida1 <= 0){
 				gana2 = false;

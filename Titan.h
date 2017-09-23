@@ -22,6 +22,8 @@ class Titan : public Jugador{
 		int heal(int);
 		int attack();
 		void incrementarHP();
+
+		int super();
 };
 
 

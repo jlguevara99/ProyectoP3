@@ -2,6 +2,11 @@
 #include <string>
 using namespace std;
 
+int Cazador::super(){
+	return 450;
+}
+
+
 Cazador::Cazador(){
 	move(20,50);
 	printw("Creando su Personaje");
@@ -114,13 +119,13 @@ int Cazador::attack(){
 
 //sanar
 int Cazador::heal(int pVida){
-	int nueva = pVida+275;
+	int nueva = pVida+45;
 	return nueva;	
 }
 
 //incrementar la vida
 void Cazador::incrementarHP(){
-	vida += 45;
+	vida += 175;
 }
 
 

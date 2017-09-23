@@ -3,6 +3,11 @@
 #include <string>
 using namespace std;
 
+int Titan::super(){
+	return 400;
+}
+
+
 Titan::Titan(){
 /*	WINDOW* win = newwin(10,10,10,10);
 	refresh();
@@ -121,13 +126,13 @@ int Titan::attack(){
 
 //sanar
 int Titan::heal(int pVida){
-	int nueva = pVida +225;
+	int nueva = pVida +25;
 	return nueva;
 }
 
 //incrementar vida
 void Titan::incrementarHP(){
-	vida += 25;
+	vida += 125;
 }
 
 string Titan::getFuerza(){
