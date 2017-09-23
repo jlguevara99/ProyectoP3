@@ -120,7 +120,7 @@ int Cazador::heal(int pVida){
 
 //incrementar la vida
 void Cazador::incrementarHP(){
-	vida += 140;
+	vida += 45;
 }
 
 

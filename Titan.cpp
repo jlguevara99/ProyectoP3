@@ -127,7 +127,7 @@ int Titan::heal(int pVida){
 
 //incrementar vida
 void Titan::incrementarHP(){
-	vida += 110;
+	vida += 25;
 }
 
 string Titan::getFuerza(){

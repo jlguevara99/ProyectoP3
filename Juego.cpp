@@ -42,11 +42,11 @@ int Juego::RUN(){
 		}else if(opcion == 3){
 			clear();
 			move(5,40);
-			printw(" ___    ___   _   _    ___    ___    ___    _   _");
+			printw(" __     ___   _   _    ___    ___    ___    _   _");
 			move(6,40);
-			printw("|   )   |__   | \\ |   |___     |      |     |___|");
+			printw("|  |    |__   | \\ |   |___     |      |     |___|");
 			move(7,40);
-			printw("|___)   |__   |  \\|    ___|   _|_     |       |");
+			printw("|_ /    |__   |  \\|    ___|   _|_     |       |");
 
 
 			move(10,63);
@@ -66,7 +66,7 @@ int Juego::RUN(){
 			move(17,62);
 			printw("_|_|_");
 			move(18,62);
-			printw("\\   /");
+			printw("\\< >/");
 			move(19,63);
 			printw("|_|");
 			move(20,63);

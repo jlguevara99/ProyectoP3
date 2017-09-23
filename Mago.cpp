@@ -117,7 +117,7 @@ int Mago::heal(int pVida){
 
 //incrementar vida
 void Mago::incrementarHP(){
-	vida += 125;
+	vida += 35;
 }
 
 string Mago::getElement(){
