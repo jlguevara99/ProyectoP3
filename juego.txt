@@ -1,1 +1,1 @@
-74,50,Jug-1,c,Jug-2,m
+5,8,Juan,m,Raquel,t

@@ -13,6 +13,8 @@ class Baston : public Arma{
 		int incrementarPoder();
 		string getElemento();
 		string getNombre();
+
+		void setPoder(int);
 };
 
 #endif

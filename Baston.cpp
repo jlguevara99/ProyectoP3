@@ -24,3 +24,7 @@ int Baston::getPoder(){
 string Baston::getElemento(){
 	return elemento;
 }
+
+void Baston::setPoder(int power){
+	poder = power;
+}

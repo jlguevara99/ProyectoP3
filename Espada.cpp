@@ -24,3 +24,7 @@ int Espada::getPoder(){
 string Espada::getElemento(){
 	return elemento;
 }
+
+void Espada::setPoder(int power){
+	poder = power;
+}

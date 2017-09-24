@@ -19,9 +19,11 @@ Juego::Juego(int p1, int p2,Jugador* jj, Jugador* jj2){
 //menu para correr el juego
 int Juego::RUN(){
 	int opcion;
-	Juego* jj = new Juego(2);
+	init_pair(4,COLOR_WHITE,COLOR_CYAN);
+	Juego* jugar = new Juego(2);
 	do {
 		WINDOW* menu = newwin(20,20,10,50);
+		wbkgd(menu,COLOR_PAIR(4));
 		refresh();
 		box(menu,0,0);
 		wrefresh(menu);
@@ -35,10 +37,10 @@ int Juego::RUN(){
 		opcion = atoi(opi);
 		clear();
 		if(opcion == 1){
-			jj->init(1);
-			jj->play();
+			jugar->init(1);
+			jugar->play();
 		}else if(opcion == 2){
-			jj->init(2);
+			jugar->init(2);
 		}else if(opcion == 3){
 			clear();
 			move(5,40);
@@ -77,7 +79,8 @@ int Juego::RUN(){
 		}
 	
 		}while(opcion != 3);
-		delete jj;
+		delete jugar;
+		delete[] jugadores;
 		return 0;
 }
 
@@ -87,12 +90,14 @@ int Juego::RUN(){
 void Juego::init(int opcionn){
 	
 	jugadores = new Jugador*[2];
+	init_pair(3,COLOR_WHITE,COLOR_GREEN);
 	
 	if(opcionn == 1){
 		for(int j = 0; j < 2; j++) {
 			move(19,50);
 			printw("Jugador %d",j+1);
 			WINDOW* menu = newwin(20,20,20,50);
+			wbkgd(menu,COLOR_PAIR(3));
 			box(menu,0,0);
 			refresh();
 			keypad(menu,true);
@@ -351,7 +356,7 @@ int Juego::play(){
 
 	} while (gana1 && gana2 && salir);
 	clear();
-	delete[] tablero;
+	delete[] tablero;//libera la memoria del tablero
 	if(gana1 == false){
 		return 1;
 	}else if(gana2 == false){

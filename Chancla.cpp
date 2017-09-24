@@ -26,3 +26,7 @@ int Chancla::getPoder(){
 string Chancla::getElemento(){
 	return elemento;
 }
+
+void Chancla::setPoder(int power){
+	poder = power;
+}

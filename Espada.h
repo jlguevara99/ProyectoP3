@@ -13,6 +13,7 @@ class Espada : public Arma{
 		string getElemento();
 		int getPoder();
 		string getNombre();
+		void setPoder(int);
 };
 
 #endif

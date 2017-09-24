@@ -21,7 +21,7 @@ class Arma{
 	virtual string getElemento();
 
 	void setNombre(string);
-	void setPoder(int);
+	virtual void setPoder(int);
 	void setElemento(string);
 
 	//funcion de arma.. incrementa el poder del arma
